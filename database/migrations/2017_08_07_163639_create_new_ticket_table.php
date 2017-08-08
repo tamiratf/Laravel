@@ -19,7 +19,7 @@ class CreateNewTicketTable extends Migration
             $table->text('content');
             $table->string('slug')->nullable();
             $table->tinyInteger('status')->nullable();
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }

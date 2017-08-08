@@ -16,6 +16,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/about', 'PagesController@about');
     Route::get('/contact', 'TicketsController@create');
     Route::post('/contact', 'TicketsController@store');
+    Route::get('/tickets', 'TicketsController@index');
+    Route::get('/tickets/{slug?}', 'TicketsController@show');
+    Route::get('/tickets/{slug?}/edit', 'TicketsController@edit');
+    Route::post('/tickets/{slug?}/edit', 'TicketsController@update');
+    Route::post('/ticket/{slug?}/delete','TicketsController@destroy');
 });
 
 

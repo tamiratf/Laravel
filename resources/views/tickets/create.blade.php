@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Contact')
+@section('title', 'Create New ticket')
 
 @section('content')
 
@@ -10,6 +10,12 @@
                 @foreach ($errors->all() as $error)
                         <p class="alert alert-danger">{{ $error }}</p>
                 @endforeach
+
+                @if (session('status'))
+                    <div class="alert alert-success">   
+                        {{ session('status')}}
+                    </div>
+                @endif
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <fieldset>
                     <legend>Submit a new ticket</legend>
